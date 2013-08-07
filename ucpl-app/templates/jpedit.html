@@ -1,0 +1,238 @@
+<form name="jobprofile" method="{method}" action="{action}" onSubmit="return checkForm()">
+<p><a href="jprtf.php?jpid=7280">Download RTF Profile</a></p>
+<table width="100%" border="0">
+<tr>
+  <td colspan="2"><b>Date Profile Developed/Updated </b>(<i>Month dd, yyyy</i>)<b>: </b><br>
+  <input type="text" name="profile_date" size="30" maxlength="100" value="{doc.profile_date}"></td></tr>
+<tr>
+  <td colspan="2"><b>Faculty/Admin Area:<br>
+    </b><select name="admin_area" value="{doc.admin_area}">
+<option value="0">None Selected</option>
+<option value="60010">Ancillary Services</option>
+<option value="80590">Arctic Institute of North America</option>
+<option value="CP">Campus Planning</option>
+<option value="38010">Continuing Education</option>
+<option value="DO">Development Office</option>
+<option value="18010">Education</option>
+<option value="37500">Environmental Design</option>
+<option value="ES">Executive Suite</option>
+<option value="62010">Facilities Management & Development</option>
+<option value="15010">Faculty of Arts</option>
+<option value="25010">Faculty of Law</option>
+<option value="28010">Faculty of Medicine</option>
+<option value="30000">Faculty of Veterinary Medicine</option>
+<option value="64000">Finance</option>
+<option value="22010">Graduate Studies</option>
+<option value="14010">Haskayne</option>
+<option value="HR">Human Resources</option>
+<option value="66000">Information Technology</option>
+<option value="IN">Institutes and Centres</option>
+<option value="80061">IS2</option>
+<option value="32500">Kinesiology</option>
+<option value="54140">Libraries & Cultural Resources</option>
+<option value="63910">Management Processes and Controls</option>
+<option value="IA">Office of Institutional Analysis</option>
+<option value="80510">Research Services</option>
+<option value="RM">Risk Management, Safety & Security</option>
+<option value="SPP">School of Public Policy</option>
+<option value="20010">Schulich School of Engineering</option>
+<option value="12010">Science</option>
+<option value="33500">Social Work</option>
+<option value="20015">SSE </option>
+<option value="54270">Student and Enrolment Services</option>
+<option value="54210">Teaching and Learning Centre</option>
+<option value="CPO">Temporarily created to move departments</option>
+<option value="9999990">TESTING 123</option>
+<option value="80505">UC International</option>
+<option value="AU">University Audit Services</option>
+<option value="29500">University of Calgary - Qatar</option>
+<option value="81010">University Relations</option>
+<option value="80030">VP Finance</option>
+<option value="54365">VP International Operations</option>
+</select>
+  </td>
+</tr>
+<tr><td><b>Department/Unit: <br>
+  </b><select name="dept" value="{doc.dept}">
+<option value="0">None Selected</option>
+<option value="28019">Media Relations</option>
+<option value="28280">Clinical Research</option>
+<option value="28030">Anaesthesia</option>
+<option value="28190">Bachelor of Health Science</option>
+<option value="28050">Biochemistry and Molecular Biology</option>
+<option value="28120">Cardiovascular Research</option>
+<option value="28350">Cell Biology and Anatomy</option>
+<option value="28130">Clinical Neurosciences</option>
+<option value="28900">Clinical Services</option>
+<option value="28150">Community Health Services</option>
+<option value="28060">Continuing Medical Education</option>
+<option value="28320">Critical Care Medicine</option>
+<option value="28200" selected>Family Medicine</option>
+<option value="28920">Animal Resource Centre</option>
+<option value="28260">MD Expansion - Access V</option>
+<option value="28090">Medical Bioethics</option>
+<option value="28040">Medical Educational Resources</option>
+<option value="28110">Medical Genetics</option>
+<option value="28300">Department of Medicine</option>
+<option value="28800">Morley Health Centre</option>
+<option value="28310">Microbiology and Infectious Diseases</option>
+<option value="UMDNA">Not Applicable</option>
+<option value="28250">Obstetrics and Gynaecology</option>
+<option value="28080">Office of Medical Education</option>
+<option value="28330">Oncology</option>
+<option value="28450">Paediatrics</option>
+<option value="28400">Pathology and Laboratory Medicine</option>
+<option value="28500">Pharmacology and Therapeutics</option>
+<option value="28550">Physiology and Biophysics</option>
+<option value="28020">Postgraduate Medical Education</option>
+<option value="28600">Psychiatry</option>
+<option value="28650">Radiology</option>
+<option value="28850">Research Supporting Services</option>
+<option value="28700">Surgery</option>
+<option value="28220">UCMC - Sunridge Clinic</option>
+<option value="28180">Undergraduate Medical Education</option>
+<option value="28015">Colon Cancer Screening Centre</option>
+<option value="28011">Dean's Office: Medicine</option>
+<option value="28070">Access IV Masters Biomed Tech</option>
+<option value="28750">Graduate Sciences Education</option>
+<option value="28010">Faculty of Medicine</option>
+<option value="28940">Alberta Bone & Joint Institute</option>
+<option value="28017">Fund Development</option>
+<option value="28018">Medicine Human Resources</option>
+<option value="28950">HBI</option>
+<option value="28041">F of Med Communications</option>
+<option value="28014">F of M Comm</option>
+<option value="28960">Inst. of Infect Immun Inflamm </option>
+<option value="28410">Cardiac Science</option>
+<option value="28970">Inst. of Maternal & Child Heal</option>
+<option value="28016">Faculty of Med - Admin Support</option>
+</select>
+</td>
+  <td><b>UCPL Number:<br>
+    </b><input type="text" name="_id" size="12" maxlength="100" value="{doc._id}">  </td>
+</tr>
+<tr><td colspan="2"><b>Job Family </b><i>(proposed</i>)<b>:<br>
+  </b><select name="job_family" value="{doc.job_family}" onchange="setFamilyOptions(this.value, 'None Selected')" onload="setFamilyOptions(this.value, 'None Selected')">
+<option value="0">None Selected</option>
+<option value="General">General</option>
+<option value="Management and Professional">Management and Professional</option>
+<option value="Operational/Administrative">Operational/Administrative</option>
+<option value="Specialist/Advisor">Specialist/Advisor</option>
+<option value="Technical">Technical</option>
+<option value="Trades">Trades</option>
+</select>
+</td>
+</tr>
+<tr><td colspan="2"><b>Development Phase </b>(<i>proposed</i>)<b>:<br>
+  </b><select name="dev_phase" value="{doc.dev_phase}">
+<option value="0">None Selected</option>
+<option value="Phase I">Phase I</option>
+<option value="Phase II">Phase II</option>
+<option value="Phase III">Phase III</option>
+</select>
+</td>
+</tr>
+<tr><td colspan="2"><b>Job Title:<br>
+  </b><input type="text" name="job_title" size="50" maxlength="100" value="{doc.job_title}"></td>
+</tr>
+</table>
+
+<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
+
+<hr>
+<p><b>Tip: If providing lengthy text, develop them in a WORD document first,
+    then cut and paste into the boxes below.</b></p>
+<p><b>Nature of the Work </b>(<i>To whom position reports, complexity and amount
+    of work/peak periods, other conditions: eg shift work, callout, dangerous or stressful conditions etc</i>)<b>:<br>
+    </b><textarea name="nature_work" rows="5" cols="50" >{doc.nature_work}</textarea>  </p>
+<p><b>Primary Purpose of the Position </b>(<i>Key purpose, functions, roles</i>)<b>:<br>
+</b><textarea name="position_purpose" rows="5" cols="50" >{doc.position_purpose}</textarea></p>
+<p><b>Qualifications/Expertise Required:<br>
+  </b><textarea name="qualifications" rows="5" cols="50" >{doc.qualifications}</textarea></p>
+<p><b>Accountabilities/Tasks and Duties </b>(<i>Results and outcomes expected when roles are carried 
+   out successfully, with supporting details on how results are accomplished</i>)<b>:<br>
+    </b><textarea name="accountability" rows="5" cols="50" >{doc.accountability}</textarea></p>
+
+<p><strong>Occupational Health &amp; Safety</strong></p>
+<ul>
+<li>Understands and complies with the requirements of the University’s Occupational Health and Safety Policy</li>
+<li>Has knowledge of and understands the expectations of the University’s Occupational Health and Safety Management System (OHSMS) and applicable Faculty/Departmental/Unit specific health and safety policies and procedures</li>
+<li>Ensures that all work conducted is in accordance with the Alberta Occupational Health and Safety Act, Regulation and Code and other health and safety legislation as applicable</li>
+</ul>
+
+
+<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
+
+<h4 align="center"><b>Core Competencies</b></h4>
+<p><b>The University has established 8 core competencies that flow from its mission
+    and values. Competencies define the behaviours, knowledge and skills important for University of Calgary staff.
+    Further information about the 8 competencies, and detailed definitions can be accessed on the Human Resources
+    website <a href="http://www.ucalgary.ca/hr/">www.ucalgary.ca/hr/</a>, or through contacting Human Resources.</b></p>
+<p><b>Each of the 8 competencies is important for staff at the University. Applying
+    relative weightings to them identifies which of the 8 are especially
+    important for a particular position. Relative weightings assist with selection
+    and performance development processes. Most job profiles have up to
+    3 competencies selected as having CRITICAL IMPORTANCE, with the rest
+    being selected as having CORE IMPORTANCE. Please choose the relative weightings
+    below.</b></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>COMMUNICATION: Ability to share information in an effective and collaborative manner.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core1" id="labCoreImportance_core1" class="hand" value="Core Importance"><label for="labCoreImportance_core1" class="answer">Core Importance</label><br><input type="radio" name="core1" id="labCriticalImportance_core1" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core1" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>FLEXIBILITY: Ability to adapt and respond to the changing environment and to
+constructively create opportunities for change through active participation.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core2" id="labCoreImportance_core2" class="hand" value="Core Importance"><label for="labCoreImportance_core2" class="answer">Core Importance</label><br><input type="radio" name="core2" id="labCriticalImportance_core2" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core2" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>INNOVATIVENESS/INITIATIVE: Ability to be creative, challenge and demonstrate initiative to generate
+improvements and foster positive outcomes.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core3" id="labCoreImportance_core3" class="hand" value="Core Importance"><label for="labCoreImportance_core3" class="answer">Core Importance</label><br><input type="radio" name="core3" id="labCriticalImportance_core3" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core3" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>KNOWLEDGE AND TECHNICAL SKILLS: Ability to demonstrate proficiency in technical and job knowledge aspects of
+the position to achieve a high level of performance. An ability and desire to
+continuously learn.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core4" id="labCoreImportance_core4" class="hand" value="Core Importance" checked><label for="labCoreImportance_core4" class="answer">Core Importance</label><br><input type="radio" name="core4" id="labCriticalImportance_core4" class="hand" value="Critical Importance"><label for="labCriticalImportance_core4" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>LEADERSHIP: Ability to achieve positive outcomes by encouraging, supporting, coaching,
+developing and mentoring others.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core5" id="labCoreImportance_core5" class="hand" value="Core Importance" checked><label for="labCoreImportance_core5" class="answer">Core Importance</label><br><input type="radio" name="core5" id="labCriticalImportance_core5" class="hand" value="Critical Importance"><label for="labCriticalImportance_core5" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>PERSONAL EFFECTIVENESS: Ability to demonstrate respect, dignity and integrity in interpersonal
+relationships and to demonstrate positive personal coping and wellness
+strategies.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core6" id="labCoreImportance_core6" class="hand" value="Core Importance"><label for="labCoreImportance_core6" class="answer">Core Importance</label><br><input type="radio" name="core6" id="labCriticalImportance_core6" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core6" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>TEAMWORK: Ability to function effectively in team situations both within and across
+departments and other organizations to achieve optimal collective results.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core7" id="labCoreImportance_core7" class="hand" value="Core Importance"><label for="labCoreImportance_core7" class="answer">Core Importance</label><br><input type="radio" name="core7" id="labCriticalImportance_core7" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core7" class="answer">Critical Importance</label><br></p>
+<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
+<tr bgcolor="white"><td><b>UNIVERSITY UNDERSTANDING: Ability to demonstrate effectiveness within the University environment and
+demonstrate an understanding of the University context.</b></td></tr>
+</table>
+<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
+</b>Response Choices</p>
+<p><input type="radio" name="core8" id="labCoreImportance_core8" class="hand" value="Core Importance" checked><label for="labCoreImportance_core8" class="answer">Core Importance</label><br><input type="radio" name="core8" id="labCriticalImportance_core8" class="hand" value="Critical Importance"><label for="labCriticalImportance_core8" class="answer">Critical Importance</label><br></p>
+
+<hr noshade size=1>
+<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
+</form>

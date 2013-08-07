@@ -1,0 +1,30 @@
+{
+	"name": "ucpl",
+	"version": "0.0.1",
+	"description": "A temporary solution for managing UCPL job profiles.",
+	"attachments": [
+		"static"
+	],
+	"modules": [
+		"lib"
+	],
+	"dust": {
+		"templates": "templates"
+	},
+	"duality": {
+		"base_template": "base.html"
+	},
+	"load": "lib/app",
+	"dependencies": {
+		"attachments": null,
+		"settings": null,
+		"modules": null,
+		"properties": null,
+		"db": null,
+		"jquery": null,
+		"duality": null,
+		"dust": null,
+		"duality-dust": null,
+		"couchtypes": null
+	}
+}
