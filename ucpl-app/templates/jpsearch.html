@@ -51,7 +51,7 @@ function popUpWindow(URLStr, left, top, width, height)
 function setOptions(chosen) {
 var selbox = document.forms[0].dept 
 selbox.options.length = 0
-selbox.options[selbox.options.length] = new Option('None Selected','')
+selbox.options[selbox.options.length] = new Option('All Departments/Units','')
 if (chosen == '' || chosen == '0') {
 }
 if (chosen == "12010") {
@@ -590,10 +590,10 @@ function setFamilyOptions(chosen) {
    var selbox = document.forms[0].dev_phase 
    selbox.options.length = 0
    if (chosen == '' || chosen == '0') {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
    }
    if (chosen == "Management and Professional") {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
       selbox.options[selbox.options.length] = new Option("A","A")
       selbox.options[selbox.options.length] = new Option("B","B")
       selbox.options[selbox.options.length] = new Option("C","C")
@@ -602,31 +602,31 @@ function setFamilyOptions(chosen) {
       selbox.options[selbox.options.length] = new Option("F","F")
    }
    if (chosen == "General") {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
       selbox.options[selbox.options.length] = new Option("Phase I","Phase I")
       selbox.options[selbox.options.length] = new Option("Phase II","Phase II")
       selbox.options[selbox.options.length] = new Option("Phase III","Phase III")
    }
    if (chosen == "Operational/Administrative") {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
       selbox.options[selbox.options.length] = new Option("Phase I","Phase I")
       selbox.options[selbox.options.length] = new Option("Phase II","Phase II")
       selbox.options[selbox.options.length] = new Option("Phase III","Phase III")
    }
    if (chosen == "Specialist/Advisor") {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
       selbox.options[selbox.options.length] = new Option("Phase I","Phase I")
       selbox.options[selbox.options.length] = new Option("Phase II","Phase II")
       selbox.options[selbox.options.length] = new Option("Phase III","Phase III")
    }
    if (chosen == "Technical") {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
       selbox.options[selbox.options.length] = new Option("Phase I","Phase I")
       selbox.options[selbox.options.length] = new Option("Phase II","Phase II")
       selbox.options[selbox.options.length] = new Option("Phase III","Phase III")
    }
    if (chosen == "Trades") {
-      selbox.options[selbox.options.length] = new Option('None Selected','')
+      selbox.options[selbox.options.length] = new Option('All Development Phases','')
       selbox.options[selbox.options.length] = new Option("Phase I","Phase I")
       selbox.options[selbox.options.length] = new Option("Phase II","Phase II")
       selbox.options[selbox.options.length] = new Option("Phase III","Phase III")
@@ -676,68 +676,18 @@ function setFamilyOptions(chosen) {
         <!--Content-->
         <!------------------------------------------------------------------------------------------->
         <TD vAlign=top width=654><FONT face="Arial, Helvetica, sans-serif" size=2>
-        <script language="javascript" type="text/javascript">
-function getSelectedButton(buttonGroup) {
-	for (var i = 0; i < buttonGroup.length; i++) {
-		if (buttonGroup[i].checked) {
-			return i
-		}
-	}
-	return -1
-}
-
-function getSelectedCount(buttonGroup) {
-	var count=0
-	for (var i = 0; i < buttonGroup.length; i++) {
-		if (buttonGroup[i].checked) {
-			count++
-		}
-	}
-	return count
-}
-
-// validate radio or checkbox
-function validateControl(ctlname, qnum) {
-	elem = document.getElementsByName(ctlname)
-	
-	if (getSelectedButton(elem) == -1) {
-		alert("All core competencies are required.")
-		elem[0].focus()
-		return false
-	}
-	return true	
-}
-
-function validateRadio(ctlname, qnum) {
-	return validateControl(ctlname, qnum)
-}
-
-function checkForm() {
-
-	for (var i=1; i<=8; i++) {
-		if (validateRadio("core" + i, i) == false) return false
-	}
-	return true
-}
-</script>
+         
+<h3>Search Job Profile</h3>
+<hr>
+<p>Please enter user search criteria to narrow the search.</p>
 <p></p>
-<p><a href="jplist.php?results=1">Return to Results</a></p>
-<form name="jobprofile" method="post" action="jpedit.php?jpid=6554" onSubmit="return checkForm()">
-<p><a href="jprtf.php?jpid=6554">Download RTF Profile</a></p>
-<table width="100%" border="0">
-<tr>
-  <td colspan="2"><b>Date Profile Developed/Updated </b>(<i>Month dd, yyyy</i>)<b>: </b><br>
-  <input type="text" name="profile_date" size="30" maxlength="100" value="August 20, 2012"></td></tr>
-<!--<tr><td width="50%"><b>Staff Member Name </b>(<i>Last, First</i>)<b>:<br>
-  </b><input type="text" name="emp_name" size="30" maxlength="100" value="">  <b><br>
-  </b></td>
-  <td width="50%"><b>UCID </b>(<i>proposed</i>)<b>:<br>
-    </b><input type="text" name="ucid" size="30" maxlength="100" value="">  </td>
-</tr>-->
-<tr>
-  <td colspan="2"><b>Faculty/Admin Area:<br>
-    </b><select name="admin_area" onchange="setOptions(this.value)" onload="setOptions(this.value)">
-<option value="0">None Selected</option>
+<form name="form1"  action="jplist.php" method="post" onSubmit="return processForm()">
+  <table border="0" cellpadding="3" style='font-family: verdana; font-size: 8pt;'>
+    <tr> 
+      <td valign="top" align="right"><b>Faculty/Admin Area:</b></td>
+      <td valign="top" align="center"></td>
+      <td valign="top"><select name="admin_area" onchange="setOptions(this.value)">
+<option value="0" selected>All Faculty/Admin Areas</option>
 <option value="60010">Ancillary Services</option>
 <option value="80590">Arctic Institute of North America</option>
 <option value="CP">Campus Planning</option>
@@ -755,7 +705,7 @@ function checkForm() {
 <option value="22010">Graduate Studies</option>
 <option value="14010">Haskayne</option>
 <option value="HR">Human Resources</option>
-<option value="66000" selected>Information Technology</option>
+<option value="66000">Information Technology</option>
 <option value="IN">Institutes and Centres</option>
 <option value="80061">IS2</option>
 <option value="32500">Kinesiology</option>
@@ -780,224 +730,59 @@ function checkForm() {
 <option value="80030">VP Finance</option>
 <option value="54365">VP International Operations</option>
 </select>
-  </td>
-</tr>
-<tr><td><b>Department/Unit: <br>
-  </b><select name="dept" >
+</td>
+    </tr>
+    <tr> 
+      <td valign="top" align="right"><b>Department/Unit:</b></td>
+      <td valign="top" align="center"></td>
+      <td valign="top"><select name="dept" >
 <option value="0">None Selected</option>
-<option value="66110">Office of the CIO</option>
-<option value="66510">IT - Partners</option>
-<option value="66443">IT - Infr 4</option>
-<option value="66441">IT - Infr 3</option>
-<option value="66410">IT - Infr</option>
-<option value="66440">IT - Infr 2</option>
-<option value="66346">IT - AD5</option>
-<option value="66314">IT - DM</option>
-<option value="66210">IT -CS</option>
-<option value="66150">IT - Imagine</option>
-<option value="66213">IT - HD</option>
-<option value="66243">IT - DS</option>
-<option value="66342">IT-AD</option>
-<option value="66200">Client Services</option>
-<option value="66460">IT Infr 6</option>
-<option value="66465">IT Infr 6</option>
-<option value="66445">IT Infr 5</option>
-<option value="66490">IT - Resch Cmp</option>
-<option value="66312">IT - AD2</option>
-<option value="66316">IT - AD3</option>
-<option value="66340">IT - AD4</option>
-<option value="66100">Security</option>
-<option value="66275">IT - Labs</option>
-<option value="66400">Infrastructure Services</option>
-<option value="66130">Service Delivery</option>
-<option value="66350">Data Management</option>
-<option value="66360" selected>Applications Development</option>
-<option value="66500">Client Relationship Management</option>
-<option value="66277">IT - Class</option>
 </select>
 </td>
-  <td><b>UCPL Number:<br>
-    </b><input type="text" name="ucpl_num" size="12" maxlength="100" value="IT011">  </td>
-</tr>
-<tr><td colspan="2"><b>Job Family </b><i>(proposed</i>)<b>:<br>
-  </b><select name="job_family" onchange="setFamilyOptions(this.value, 'None Selected')" onload="setFamilyOptions(this.value, 'None Selected')">
-<option value="0">None Selected</option>
+    </tr>
+    <tr> 
+      <td valign="top" align="right"><b>UCPL Number/Alpha Ref:</b></td>
+      <td valign="top" align="center"></td>
+      <td valign="top"><input type="text" name="ucpl_num" size="30" maxlength="100" value=""></td>
+    </tr>
+    <tr> 
+      <td valign="top" align="right"><b>Job Family:</b></td>
+      <td valign="top" align="center"></td>
+      <td valign="top"><select name="job_family" onchange="setFamilyOptions(this.value)">
+<option value="0" selected>All Job Families</option>
 <option value="General">General</option>
-<option value="Management and Professional" selected>Management and Professional</option>
+<option value="Management and Professional">Management and Professional</option>
 <option value="Operational/Administrative">Operational/Administrative</option>
 <option value="Specialist/Advisor">Specialist/Advisor</option>
 <option value="Technical">Technical</option>
 <option value="Trades">Trades</option>
 </select>
 </td>
-</tr>
-<tr><td colspan="2"><b>Development Phase </b>(<i>proposed</i>)<b>:<br>
-  </b><select name="dev_phase" >
+    </tr>
+    <tr> 
+      <td valign="top" align="right"><b>Development Phase:</b></td>
+      <td valign="top" align="center"></td>
+      <td valign="top"><select name="dev_phase" >
 <option value="0">None Selected</option>
-<option value="A">A</option>
-<option value="B">B</option>
-<option value="C">C</option>
-<option value="D" selected>D</option>
-<option value="E">E</option>
-<option value="F">F</option>
 </select>
 </td>
-</tr>
-<tr><td colspan="2"><b>Job Title:<br>
-  </b><input type="text" name="job_title" size="50" maxlength="100" value="Portfolio Manager"></td>
-</tr>
-</table>
+    </tr>
+    <tr> 
+      <td valign="top" align="right"><b>Job Title:</b></td>
+      <td valign="top" align="center"></td>
+      <td valign="top"><input type="text" name="job_title" size="30" maxlength="100" value=""></td>
+    </tr>
 
-<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
-
-<hr>
-<p><b>Tip: If providing lengthy text, develop them in a WORD document first,
-    then cut and paste into the boxes below.</b></p>
-<p><b>Nature of the Work </b>(<i>To whom position reports, complexity and amount
-    of work/peak periods, other conditions: eg shift work, callout, dangerous or stressful conditions etc</i>)<b>:<br>
-    </b><textarea name="nature_work" rows="5" cols="50" >This position is within the Application Development group in Information Technologies, reporting to the Associate Director of Application Development. This group is responsible for the development and maintenance of the over 200 software applications that support the administrative, academic, and research activities of the University of Calgary. The Portfolio Manager is responsible for managing the large number of applications systems within their portfolio suite to ensure that they continually support the business needs of the university. Competing requests require strong resource management to work is completed.</textarea>  </p>
-<p><b>Primary Purpose of the Position </b>(<i>Key purpose, functions, roles</i>)<b>:<br>
-</b><textarea name="position_purpose" rows="5" cols="50" >The Portfolio Manager is responsible for the overall performance of one or more portfolios of applications and related development teams, and is directly responsible for the success of the solutions and teams. Development teams consist of Team Leads, Systems Analysts, and Developers, who are responsible for the service delivery of technical solutions that support the administrative, academic, and research activities of the University of Calgary. The Portfolio Manager continuously reviews the state, performance and scale of contribution and value against strategic goals for every application in the portfolio.</textarea></p>
-<p><b>Qualifications/Expertise Required:<br>
-  </b><textarea name="qualifications" rows="5" cols="50" >•	Completed a post-secondary degree in Computer Science or a related field, and have a minimum of 8 years of relevant experience
-•	Expert knowledge of modern hardware and software technologies
-•	Demonstrated project planning and management skills and portfolio or project management methodologies
-•	Strong written and verbal communication skills, including presentation skills
-•	Highly professional team player with strong interpersonal and communication skills. Ability to communicate effectively with business and IT professionals at all levels and translate business requirements into technical specifications
-•	Exceptional conceptual, analytical and organizational skills with excellent problem solving and diagnostic insight. Ability to map processes, highlight potential problems and assess feasibility
-•	Demonstrated ability to interact effectively with others to provide effective services, to manage conflict situations, to support co-operative problem identification and resolution, and to assist with resolution implementations
-•	Experience in creating and leading cross-functional project teams
-•	Experience with business cases, and compiling and analyzing information to estimate project costs and resourcing needs
-•	Extensive experience as a senior member of project teams on significant projects
-•	Ability to work in changing and ambiguous environments
-</textarea></p>
-<p><b>Accountabilities/Tasks and Duties </b>(<i>Results and outcomes expected when roles are carried 
-   out successfully, with supporting details on how results are accomplished</i>)<b>:<br>
-    </b><textarea name="accountability" rows="5" cols="50" >System Requirements and Technical Design
-•	Consults with a largely dispersed, cross functional client group as well as other IT support teams to determine application delivery and service requirements
-•	Develops work plans, estimates, methodology and procedures for application development and integration projects
-•	Proactively investigates and stays current with the application product directions and emerging technologies
-•	Directly responsible for providing the technical direction of the technical support teams and for providing a framework for project planning, communications, reporting, procedural and contractual activity within the technical teams
-•	Responsible for acquiring strategic knowledge of university business processes.
-•	Responsible for collaborations required to interface with other external computer systems
-Integration Management
-•	Application dependencies are understood and communicated accordingly amongst the relevant teams
-•	Delays and other changes to project deliverables are identified as early as possible and communicated amongst the impacted application teams
-Scope Management
-•	Deliverables, milestones, and project plans are predetermined for projects to enable accurate progress tracking
-•	Actual progress is tracked against the plan, variances are investigated promptly and corrective actions discussed with the appropriate resources
-•	The scope of each development project is documented in a project charter or technical design spec for review and approval before it is undertaken
-Time Management
-•	Plan, manage and investigate variances between the actual and estimated project resource time allocations
-•	Action plans to deal with variances and prevent additional variances are developed and discussed with the appropriate team members
-Quality Management
-•	A library of development documentation templates and strategies are maintained and communicated to the consultants, developers and the entire team
-•	Deliverable reviews and sign-offs are obtained on a timely basis
-•	Development quality control reviews are planned and executed for custom objects, including:
-o	Requirements documentation review
-o	Functional design review
-o	Solution architecture and technical design review
-o	Code walkthrough
-o	Test plan review
-o	Test execution and defect resolution review
-o	Security review (if applicable)
-•	Review findings are delegated to the appropriate team members and managed through to timely resolution
-•	Development documentation is maintained in well organized physical and electronic repositories
-Risk and Issues Management
-•	Responsible for ensuring that the Project and Issues logs are actively and appropriately used by the development team
-•	Risks and issues are escalated for management and/or resolution if they are outstanding longer than expected
-•	Regular periodic reviews of risk and issue logs are conducted to close or escalate overdue items
-•	Key risks, key issues and issue management statistics are summarized in team status reports
-Staff Development
-•	Responsible for the leadership and staff development of technical teams
-•	Ensure that staff job profiles, performance assessments and reviews are kept up to date
-•	Technical staff is supervised and reviewed appropriately to ensure high quality customer service
-•	Responsible for hiring the technical staff, as well as any disciplinary action required within the teams
-</textarea></p>
-
-<p><strong>Occupational Health &amp; Safety</strong></p>
-<ul>
-<li>Understands and complies with the requirements of the University’s Occupational Health and Safety Policy</li>
-<li>Has knowledge of and understands the expectations of the University’s Occupational Health and Safety Management System (OHSMS) and applicable Faculty/Departmental/Unit specific health and safety policies and procedures</li>
-<li>Ensures that all work conducted is in accordance with the Alberta Occupational Health and Safety Act, Regulation and Code and other health and safety legislation as applicable</li>
-</ul>
-
-
-<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
-
-<h4 align="center"><b>Core Competencies</b></h4>
-<p><b>The University has established 8 core competencies that flow from its mission
-    and values. Competencies define the behaviours, knowledge and skills important for University of Calgary staff.
-    Further information about the 8 competencies, and detailed definitions can be accessed on the Human Resources
-    website <a href="http://www.ucalgary.ca/hr/">www.ucalgary.ca/hr/</a>, or through contacting Human Resources.</b></p>
-<p><b>Each of the 8 competencies is important for staff at the University. Applying
-    relative weightings to them identifies which of the 8 are especially
-    important for a particular position. Relative weightings assist with selection
-    and performance development processes. Most job profiles have up to
-    3 competencies selected as having CRITICAL IMPORTANCE, with the rest
-    being selected as having CORE IMPORTANCE. Please choose the relative weightings
-    below.</b></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>COMMUNICATION: Ability to share information in an effective and collaborative manner.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core1" id="labCoreImportance_core1" class="hand" value="Core Importance"><label for="labCoreImportance_core1" class="answer">Core Importance</label><br><input type="radio" name="core1" id="labCriticalImportance_core1" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core1" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>FLEXIBILITY: Ability to adapt and respond to the changing environment and to
-constructively create opportunities for change through active participation.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core2" id="labCoreImportance_core2" class="hand" value="Core Importance"><label for="labCoreImportance_core2" class="answer">Core Importance</label><br><input type="radio" name="core2" id="labCriticalImportance_core2" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core2" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>INNOVATIVENESS/INITIATIVE: Ability to be creative, challenge and demonstrate initiative to generate
-improvements and foster positive outcomes.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core3" id="labCoreImportance_core3" class="hand" value="Core Importance" checked><label for="labCoreImportance_core3" class="answer">Core Importance</label><br><input type="radio" name="core3" id="labCriticalImportance_core3" class="hand" value="Critical Importance"><label for="labCriticalImportance_core3" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>KNOWLEDGE AND TECHNICAL SKILLS: Ability to demonstrate proficiency in technical and job knowledge aspects of
-the position to achieve a high level of performance. An ability and desire to
-continuously learn.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core4" id="labCoreImportance_core4" class="hand" value="Core Importance" checked><label for="labCoreImportance_core4" class="answer">Core Importance</label><br><input type="radio" name="core4" id="labCriticalImportance_core4" class="hand" value="Critical Importance"><label for="labCriticalImportance_core4" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>LEADERSHIP: Ability to achieve positive outcomes by encouraging, supporting, coaching,
-developing and mentoring others.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core5" id="labCoreImportance_core5" class="hand" value="Core Importance"><label for="labCoreImportance_core5" class="answer">Core Importance</label><br><input type="radio" name="core5" id="labCriticalImportance_core5" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core5" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>PERSONAL EFFECTIVENESS: Ability to demonstrate respect, dignity and integrity in interpersonal
-relationships and to demonstrate positive personal coping and wellness
-strategies.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core6" id="labCoreImportance_core6" class="hand" value="Core Importance" checked><label for="labCoreImportance_core6" class="answer">Core Importance</label><br><input type="radio" name="core6" id="labCriticalImportance_core6" class="hand" value="Critical Importance"><label for="labCriticalImportance_core6" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>TEAMWORK: Ability to function effectively in team situations both within and across
-departments and other organizations to achieve optimal collective results.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core7" id="labCoreImportance_core7" class="hand" value="Core Importance" checked><label for="labCoreImportance_core7" class="answer">Core Importance</label><br><input type="radio" name="core7" id="labCriticalImportance_core7" class="hand" value="Critical Importance"><label for="labCriticalImportance_core7" class="answer">Critical Importance</label><br></p>
-<table style='font-family: verdana; font-size: 8pt; color: 000066;' cellpadding=5 cellspacing=1 bgcolor=CACAD2>
-<tr bgcolor="white"><td><b>UNIVERSITY UNDERSTANDING: Ability to demonstrate effectiveness within the University environment and
-demonstrate an understanding of the University context.</b></td></tr>
-</table>
-<p><b>PLEASE CHOOSE THE RELATIVE WEIGHTING FOR THIS COMPETENCY:<br>
-</b>Response Choices</p>
-<p><input type="radio" name="core8" id="labCoreImportance_core8" class="hand" value="Core Importance"><label for="labCoreImportance_core8" class="answer">Core Importance</label><br><input type="radio" name="core8" id="labCriticalImportance_core8" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core8" class="answer">Critical Importance</label><br></p>
-
-<hr noshade size=1>
-<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
+  </table>
+  <p>
+  
+  </p>
+  <p> 
+    <input type="submit" name="submit" value="Search">
+  </p>
+  
 </form>
+<p></p>
 
 		</FONT></TD>
       </TR>
@@ -1013,6 +798,7 @@ demonstrate an understanding of the University context.</b></td></tr>
 href="http://www.ucalgary.ca/hr/index.html">Human Resources</A>, <A 
 href="http://www.ucalgary.ca/">University of Calgary</A></NOBR><BR>
   <NOBR></NOBR></FONT></DIV>
-  
+  <script>setOptions('')
+setFamilyOptions('')</script>
 </BODY>
 </HTML>

@@ -722,8 +722,8 @@ function checkForm() {
 </script>
 <p></p>
 <p><a href="jplist.php?results=1">Return to Results</a></p>
-<form name="jobprofile" method="post" action="jpedit.php?jpid=6554" onSubmit="return checkForm()">
-<p><a href="jprtf.php?jpid=6554">Download RTF Profile</a></p>
+<form name="jobprofile" method="post" action="jpcopy.php" onSubmit="return checkForm()">
+<p></p>
 <table width="100%" border="0">
 <tr>
   <td colspan="2"><b>Date Profile Developed/Updated </b>(<i>Month dd, yyyy</i>)<b>: </b><br>
@@ -817,7 +817,7 @@ function checkForm() {
 </select>
 </td>
   <td><b>UCPL Number:<br>
-    </b><input type="text" name="ucpl_num" size="12" maxlength="100" value="IT011">  </td>
+    </b><input type="text" name="ucpl_num" size="12" maxlength="100" value="">  </td>
 </tr>
 <tr><td colspan="2"><b>Job Family </b><i>(proposed</i>)<b>:<br>
   </b><select name="job_family" onchange="setFamilyOptions(this.value, 'None Selected')" onload="setFamilyOptions(this.value, 'None Selected')">
@@ -847,9 +847,9 @@ function checkForm() {
   </b><input type="text" name="job_title" size="50" maxlength="100" value="Portfolio Manager"></td>
 </tr>
 </table>
-
-<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
-
+<!--
+<div align="right"><input name="submit" type="submit" value="Insert Job Profile"></div>
+-->
 <hr>
 <p><b>Tip: If providing lengthy text, develop them in a WORD document first,
     then cut and paste into the boxes below.</b></p>
@@ -922,9 +922,9 @@ Staff Development
 <li>Ensures that all work conducted is in accordance with the Alberta Occupational Health and Safety Act, Regulation and Code and other health and safety legislation as applicable</li>
 </ul>
 
-
-<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
-
+<!--
+<div align="right"><input name="submit" type="submit" value="Insert Job Profile"></div>
+-->
 <h4 align="center"><b>Core Competencies</b></h4>
 <p><b>The University has established 8 core competencies that flow from its mission
     and values. Competencies define the behaviours, knowledge and skills important for University of Calgary staff.
@@ -996,7 +996,7 @@ demonstrate an understanding of the University context.</b></td></tr>
 <p><input type="radio" name="core8" id="labCoreImportance_core8" class="hand" value="Core Importance"><label for="labCoreImportance_core8" class="answer">Core Importance</label><br><input type="radio" name="core8" id="labCriticalImportance_core8" class="hand" value="Critical Importance" checked><label for="labCriticalImportance_core8" class="answer">Critical Importance</label><br></p>
 
 <hr noshade size=1>
-<div align="right"><input name="submit" type="submit" value="Update Job Profile"></div>
+<div align="right"><input name="submit" type="submit" value="Insert Job Profile"></div>
 </form>
 
 		</FONT></TD>
