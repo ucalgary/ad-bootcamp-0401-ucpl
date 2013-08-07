@@ -29,3 +29,14 @@ exports.jpedit = function(doc, req) {
 		})
 	};
 };
+
+exports.jpdelete = function(doc, req) {
+        return {
+                title: doc._id,
+                content: templates.render('jpdelete.html', req, {
+                        doc: doc,
+                        method: 'POST',
+                        action: '../../_update/jpdelete/' + doc._id,
+                })
+        };
+};

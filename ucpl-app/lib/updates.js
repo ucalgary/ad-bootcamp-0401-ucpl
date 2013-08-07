@@ -37,3 +37,12 @@ exports.jpedit = function (doc, req) {
 		return [null, "Failed validation. Fix the errors."];
 	}
 };
+
+exports.jpdelete = function (doc, req) {
+  deleted = {
+    _id : doc._id,
+    _rev : doc._rev,
+    _deleted : true
+  };
+  return [deleted, "Deleted: " + doc._id];
+};
