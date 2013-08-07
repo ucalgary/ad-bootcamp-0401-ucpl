@@ -1,0 +1,17 @@
+<h1>UC Performance Link Job Profiles</h1>
+<p>{message}<p>
+<ul id="dept"></ul>
+<script type="text/javascript">
+  var db = require('db').current();
+  var $ = require('jquery');
+
+  db.getView('ucpl', 'depts', function (err, data) {
+  if (err) {
+  // an error occurred
+  return alert(err);
+  }
+  for (var i = 0; i < data.rows.length; i++) {
+		      $('<li/>').text(data.rows[i].key).appendTo('#depts');
+		      }
+		      });
+</script>
