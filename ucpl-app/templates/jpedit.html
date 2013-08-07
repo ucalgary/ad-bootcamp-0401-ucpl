@@ -1,3 +1,17 @@
+<script>
+$(document).ready(function() {
+  $("#admin_area").val('{doc.admin_area}');
+  $("#dept").val('{doc.dept}');
+  $("#job_family").val('{doc.job_family}');
+  $("#dev_phase").val('{doc.dev_phase}');
+
+
+});
+
+
+</script>
+
+
 <form name="jobprofile" method="{method}" action="{action}" onSubmit="return checkForm()">
 <p><a href="jprtf.php?jpid=7280">Download RTF Profile</a></p>
 <table width="100%" border="0">
@@ -6,7 +20,7 @@
   <input type="text" name="profile_date" size="30" maxlength="100" value="{doc.profile_date}"></td></tr>
 <tr>
   <td colspan="2"><b>Faculty/Admin Area:<br>
-    </b><select name="admin_area" value="{doc.admin_area}">
+    </b><select name="admin_area" id="admin_area" value="{doc.admin_area}">
 <option value="0">None Selected</option>
 <option value="60010">Ancillary Services</option>
 <option value="80590">Arctic Institute of North America</option>
@@ -53,7 +67,7 @@
   </td>
 </tr>
 <tr><td><b>Department/Unit: <br>
-  </b><select name="dept" value="{doc.dept}">
+  </b><select name="dept" id="dept" value="{doc.dept}">
 <option value="0">None Selected</option>
 <option value="28019">Media Relations</option>
 <option value="28280">Clinical Research</option>
@@ -112,7 +126,7 @@
     </b><input type="text" name="_id" size="12" maxlength="100" value="{doc._id}">  </td>
 </tr>
 <tr><td colspan="2"><b>Job Family </b><i>(proposed</i>)<b>:<br>
-  </b><select name="job_family" value="{doc.job_family}" onchange="setFamilyOptions(this.value, 'None Selected')" onload="setFamilyOptions(this.value, 'None Selected')">
+  </b><select name="job_family" id="job_family" value="{doc.job_family}" onchange="setFamilyOptions(this.value, 'None Selected')" onload="setFamilyOptions(this.value, 'None Selected')">
 <option value="0">None Selected</option>
 <option value="General">General</option>
 <option value="Management and Professional">Management and Professional</option>
@@ -124,7 +138,7 @@
 </td>
 </tr>
 <tr><td colspan="2"><b>Development Phase </b>(<i>proposed</i>)<b>:<br>
-  </b><select name="dev_phase" value="{doc.dev_phase}">
+  </b><select name="dev_phase" id="dev_phase" value="{doc.dev_phase}">
 <option value="0">None Selected</option>
 <option value="Phase I">Phase I</option>
 <option value="Phase II">Phase II</option>
