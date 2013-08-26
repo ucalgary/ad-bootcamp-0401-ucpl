@@ -1,7 +1,9 @@
 exports.views = {
 	depts: {
 		map: function(doc) {
-			emit(doc.dept, null);
+			if (doc.faculty_descr) {
+		 		emit(doc.faculty_descr, {"departments":doc.departments, "faculty_code":doc.faculty_code});
+			}
 		}
 	}
 }

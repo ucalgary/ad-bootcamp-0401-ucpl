@@ -24,8 +24,12 @@ def send_profile( profile ):
 # Set up custom MySQL conversion that changes date times into strings
 conv=converters.conversions.copy()
 conv[12]=str       # convert dates to strings
+
+# Connect to MySQL database
 db = MySQLdb.connect(host=host,user=user,passwd=passwd,db=db,conv=conv)
 cursor = db.cursor()
+
+# Run through job profiles
 sql = "SELECT * FROM jobprofile"
 try:
 	cursor.execute(sql)
@@ -55,4 +59,34 @@ try:
 					pass
 		send_profile(json.dumps(profile))
 except:
-	print "Error: unable to fetch data"
+	print "Error: unable to fetch job profile data"
+
+# Run through faculties
+faculties = []
+sql = "SELECT * FROM faculty"
+try:
+	cursor.execute(sql)
+	results = cursor.fetchall()
+	for row in results:
+		faculty_headers = ['faculty_id', 'faculty_code', 'faculty_descr']
+		faculties.append(dict(zip(faculty_headers, row)))
+except:
+	print "Error: unable to fetch faculty data"
+
+for faculty in faculties:
+	sql = "SELECT * FROM dept WHERE faculty_code = %s" % (faculty['faculty_code'])
+	try:
+		departments = dict()
+		cursor.execute(sql)
+		results = cursor.fetchall()
+		for row in results:
+			department_headers = ['dept_id', 'faculty_code', 'dept_code', 'dept_descr']
+			department = dict(zip(department_headers, row))
+			departments[department['dept_descr']] = department['dept_code']
+		faculty['departments'] = departments
+		faculty.pop("faculty_id", None)
+		send_profile(json.dumps(faculty))
+	except:
+		print "Error: unable to fetch department data"
+		
+

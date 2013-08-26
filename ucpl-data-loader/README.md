@@ -13,10 +13,10 @@
 ## Usage
 * Create a MySQL database using the SQL file that comes attached with the files in this project
 
-	`mysql -p -u root DATABASENAME < ucpl_2013-08-07.sql`
+	`mysql -p -u root DATABASENAME < ucpl_2013-09-26.sql`
 	
 * Copy database_config.default.py to database_config.py and populate the variables with the connection information to your MySQL database
 
 * Run CouchDB on localhost and create a database 'ucpl'
 
-* Run profiles_to_couch.py 
+* Run profiles_to_couch.py
