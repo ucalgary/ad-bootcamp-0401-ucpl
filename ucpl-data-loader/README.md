@@ -17,6 +17,6 @@
 	
 * Copy database_config.default.py to database_config.py and populate the variables with the connection information to your MySQL database
 
-* Run CouchDB on localhost and create a database 'profiles'
+* Run CouchDB on localhost and create a database 'ucpl'
 
 * Run profiles_to_couch.py 

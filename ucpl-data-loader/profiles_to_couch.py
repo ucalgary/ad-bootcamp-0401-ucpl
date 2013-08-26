@@ -11,7 +11,7 @@ from datetime import datetime
 
 def send_profile( profile ):
 	http = httplib.HTTPConnection('localhost:5984')
-	http.request('POST', '/profiles', profile, {"Content-type": "application/json", "Accept": "text/plain"})
+	http.request('POST', '/ucpl', profile, {"Content-type": "application/json", "Accept": "text/plain"})
 	response = http.getresponse()
 	print (response.read())	
 
