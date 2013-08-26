@@ -1,3 +1,4 @@
 .DS_Store
 ucpl-data-loader/database_config.py
 ucpl-data-loader/database_config.pyc
+ucpl-app/packages/*
