@@ -45,6 +45,8 @@
 		* admin_area, dept, jobprofile_id
 	* convert "NULL" strings and empty values into nulls
 	* change the ucpl_num field to _id (will use as the document ID)
+* convert existing employee profiles into JSON documents (only for users with admin privs)
+* convert existing faculty and department tables into JSON documents
 * set up rewrites in CouchDB to tie all the pages together
 * set up Apache or nginx to reverse proxy the database
 
@@ -57,6 +59,8 @@
 * create a list function that outputs a list of profiles (like jplist.php)
 * create a show function to delete a profile (like jpdelete.php)
 * create a show function to copy a profile (like jpcopy.php)
+* create a show function to edit faculty and department information (like admindept.php)
+* create a show function to edit user privileges (like privadd.php)
 * create a show function to send (email) a profile (like jpsend.php)
 * create a design document to hold configuration info (from jpform.php)
 
